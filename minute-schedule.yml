@@ -3,13 +3,13 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-schedules:
-- cron: "*/10 * * * *" # cron syntax defining a schedule
-  displayName: "Run every 10 minutes." # friendly name given to a specific schedule
-  branches:
-    include: [ master ] # which branches the schedule applies to
-    exclude: [ ] # which branches to exclude from the schedule
-  always: true
+# schedules:
+# - cron: "*/100000 * * * *" # cron syntax defining a schedule
+#   displayName: "Run every 10 minutes." # friendly name given to a specific schedule
+#   branches:
+#     include: [ master ] # which branches the schedule applies to
+#     exclude: [ ] # which branches to exclude from the schedule
+#   always: true
 
 trigger: none
 resources:

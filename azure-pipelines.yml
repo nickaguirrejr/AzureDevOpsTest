@@ -6,13 +6,25 @@
 trigger:
 - master
 
+parameters:
+  - name: testval1
+    type: string
+    default: testvalparam
+
+  - name: testval2
+    type: number
+    values:
+      - 1
+      - 2
+      - 3
+
 pool:
   vmImage: ubuntu-latest
 
 steps:
 - checkout: none
 - download: none
-- script: echo Hello, world!
+- script: echo Hello, world! Params are @pipeline().parameters.testval1
   displayName: 'Run a one-line script'
 
 - script: |

@@ -11,14 +11,24 @@ schedules:
     exclude: [ ] # which branches to exclude from the schedule
   always: true
 
-pool:
-  vmImage: ubuntu-latest
+trigger: none
+resources:
+  pipelines:
+  - pipeline: TestPipelineTriggered
+    source: AzureDevOpsTest
+    trigger:
+    branches:
+      include:
+        - master
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+# pool:
+#   vmImage: ubuntu-latest
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+# steps:
+# - script: echo Hello, world!
+#   displayName: 'Run a one-line script'
+
+# - script: |
+#     echo Add other tasks to build, test, and deploy your project.
+#     echo See https://aka.ms/yaml
+#   displayName: 'Run a multi-line script'

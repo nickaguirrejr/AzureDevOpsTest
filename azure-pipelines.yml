@@ -24,7 +24,7 @@ pool:
 steps:
 - checkout: none
 - download: none
-- script: echo Hello, world! Params are @pipeline().parameters.testval1
+- script: echo Hello, world! Params are {{ parameters.testval1 }} and {{ parameters.testval2 }}
   displayName: 'Run a one-line script'
 
 - script: |
